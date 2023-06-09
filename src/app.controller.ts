@@ -11,4 +11,9 @@ export class AppController {
   getHello(@Req() request: Request): any {
     return `voici la requete : ${JSON.stringify(request.body)}`;
   }
+
+  @Get('name')
+  async getName(): Promise<(string | number)[]> {
+    return ['a', 1, 2];
+  }
 }
